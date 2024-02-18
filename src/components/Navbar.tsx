@@ -6,35 +6,37 @@ import { DropdownMenuTrigger, DropdownMenuItem, DropdownMenuContent, DropdownMen
 import MenuIcon from '@mui/icons-material/Menu';
 import MessageIcon from '@mui/icons-material/Message';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import XIcon from '@mui/icons-material/X';
+
 
 export default function Navbar() {
   return (
     <nav className="w-full border-b border-gray-200 dark:border-gray-800 mt-6">
       <div className="w-full max-w-7xl mx-auto px-4 flex items-center h-14">
-        <Link className="mr-auto" href="#">
-          <FlagIcon className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
+        <Link  href="/home">
+          <img src="./logo.png" alt="logo" className="h-12 w-12"  />
         </Link>
         <div className="ml-auto flex items-center space-x-4">
-          <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="#">
+          <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="/about">
             About
           </Link>
           <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="#">
-            Skills
+            Project
           </Link>
           <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="#">
-            Contact
-          </Link>
-          <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600hidden lg:inline-block" href="#">
             Blog
           </Link>
           <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="#">
             Experience
           </Link>
-        <MessageIcon/>
-       <GitHubIcon/>
-         <XIcon/>
+          <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="#">
+            Contact
+          </Link>
+          <Button variant="ghost">
+            <GitHubIcon/>
+          </Button>
+          <Button variant="ghost">
+            <MessageIcon/>
+          </Button>
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"
@@ -43,7 +45,7 @@ export default function Navbar() {
           >
             <ModeToggle />
           </ThemeProvider>
-  
+
           <div className="lg:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -51,7 +53,7 @@ export default function Navbar() {
                   <MenuIcon />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent side="right">
+              <DropdownMenuContent side="right" className="mt-8">
                 <DropdownMenuItem>
                   <Link className="font-medium text-sm hover:underline" href="#">
                     About
@@ -59,12 +61,7 @@ export default function Navbar() {
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link className="font-medium text-sm hover:underline" href="#">
-                    Skills
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Link className="font-medium text-sm hover:underline" href="#">
-                    Contact
+                    Project
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
@@ -75,6 +72,11 @@ export default function Navbar() {
                 <DropdownMenuItem>
                   <Link className="font-medium text-sm hover:underline" href="#">
                     Experience
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link className="font-medium text-sm hover:underline" href="#">
+                    Contact
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
