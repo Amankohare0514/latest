@@ -4,44 +4,51 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { DropdownMenuTrigger, DropdownMenuItem, DropdownMenuContent, DropdownMenu } from "@/components/ui/dropdown-menu"
 import MenuIcon from '@mui/icons-material/Menu';
+import MessageIcon from '@mui/icons-material/Message';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import XIcon from '@mui/icons-material/X';
 
 export default function Navbar() {
   return (
-    <nav className="w-full border-b border-gray-200 dark:border-gray-800">
+    <nav className="w-full border-b border-gray-200 dark:border-gray-800 mt-6">
       <div className="w-full max-w-7xl mx-auto px-4 flex items-center h-14">
         <Link className="mr-auto" href="#">
           <FlagIcon className="h-6 w-6" />
           <span className="sr-only">Acme Inc</span>
         </Link>
         <div className="ml-auto flex items-center space-x-4">
-          <Link className="font-medium text-sm hover:underline hidden lg:inline-block" href="#">
+          <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="#">
             About
           </Link>
-          <Link className="font-medium text-sm hover:underline hidden lg:inline-block" href="#">
+          <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="#">
             Skills
           </Link>
-          <Link className="font-medium text-sm hover:underline hidden lg:inline-block" href="#">
+          <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="#">
             Contact
           </Link>
-          <Link className="font-medium text-sm hover:underline hidden lg:inline-block" href="#">
+          <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600hidden lg:inline-block" href="#">
             Blog
           </Link>
-          <Link className="font-medium text-sm hover:underline hidden lg:inline-block" href="#">
+          <Link className="font-medium text-sm hover:text-gray-500 hover:dark:text-gray-600 hidden lg:inline-block" href="#">
             Experience
           </Link>
+        <MessageIcon/>
+       <GitHubIcon/>
+         <XIcon/>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
             <ModeToggle />
           </ThemeProvider>
+  
           <div className="lg:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline">
-                  <MenuIcon/>
+                  <MenuIcon />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent side="right">
